@@ -22,7 +22,7 @@ class MultiSelectActions<T> {
   /// Calls the onConfirm function if one was provided.
   void onConfirmTap(
       BuildContext ctx, List<T> selectedValues, Function(List<T>)? onConfirm) {
-    Navigator.pop(ctx, selectedValues);
+    // Navigator.pop(ctx, selectedValues);
     if (onConfirm != null) {
       onConfirm(selectedValues);
     }
