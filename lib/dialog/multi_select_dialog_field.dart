@@ -37,7 +37,7 @@ class MultiSelectDialogField<V> extends FormField<List<V>> {
   final List<V> initialValue;
 
   /// Fires when confirm is tapped.
-  final void Function(List<V>) onConfirm;
+  final void Function(context, List<V>) onConfirm;
 
   /// Toggles search functionality.
   final bool searchable;
@@ -196,7 +196,7 @@ class _MultiSelectDialogFieldView<V> extends StatefulWidget {
   final void Function(List<V>)? onSelectionChanged;
   final MultiSelectChipDisplay<V>? chipDisplay;
   final List<V> initialValue;
-  final void Function(List<V>)? onConfirm;
+  final void Function(context, List<V>)? onConfirm;
   final bool? searchable;
   final Text? confirmText;
   final Text? cancelText;
@@ -409,7 +409,7 @@ class __MultiSelectDialogFieldViewState<V>
             if (widget.state != null) {
               widget.state!.didChange(_selectedItems);
             }
-            if (widget.onConfirm != null) widget.onConfirm!(_selectedItems);
+            if (widget.onConfirm != null) widget.onConfirm!(ctx, _selectedItems);
           },
         );
       },
