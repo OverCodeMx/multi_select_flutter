@@ -380,7 +380,9 @@ class __MultiSelectDialogFieldViewState<V>
       barrierDismissible: widget.isDismissible,
       context: context,
       builder: (ctx) {
-        return MultiSelectDialog<V>(
+        return Scaffold(
+        backgroundColor: Colors.transparent,
+        body: MultiSelectDialog<V>(
           checkColor: widget.checkColor,
           selectedItemsTextStyle: widget.selectedItemsTextStyle,
           searchHintStyle: widget.searchHintStyle,
@@ -411,7 +413,7 @@ class __MultiSelectDialogFieldViewState<V>
             }
             if (widget.onConfirm != null) widget.onConfirm!(ctx, _selectedItems);
           },
-        );
+        ) );
       },
     );
   }
